@@ -27,3 +27,8 @@
 *.exe
 *.out
 *.app
+
+# buld and devel folder
+build/
+devel/
+
