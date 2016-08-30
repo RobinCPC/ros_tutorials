@@ -131,6 +131,7 @@ include_directories(
 ## Declare a C++ executable
 # add_executable(learning_tf_node src/learning_tf_node.cpp)
 add_executable(turtle_tf_broadcaster src/turtle_tf_broadcaster.cpp)
+add_executable(turtle_tf_listener src/turtle_tf_listener.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -141,6 +142,7 @@ add_executable(turtle_tf_broadcaster src/turtle_tf_broadcaster.cpp)
 #   ${catkin_LIBRARIES}
 # )
 target_link_libraries(turtle_tf_broadcaster ${catkin_LIBRARIES})
+target_link_libraries(turtle_tf_listener ${catkin_LIBRARIES})
 
 #############
 ## Install ##
