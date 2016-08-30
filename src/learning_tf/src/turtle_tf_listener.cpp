@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     tf::StampedTransform transform;
     try
     {
-      listener.lookupTransform("/turtle2", "/turtle1",
+      listener.lookupTransform("/turtle2", "/carrot1",
           ros::Time(0), transform);
     }
     catch (tf::TransformException &ex)
