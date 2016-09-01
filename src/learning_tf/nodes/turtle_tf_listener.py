@@ -29,18 +29,21 @@ if __name__ == '__main__':
 
     rate = rospy.Rate(10.0)
 
-    listener.waitForTransform("/turtle2", "/carrot1", rospy.Time(),
-            rospy.Duration(4.0))
+    listener.waitForTransform("/turtle2", "/carrot1", rospy.Time(0),
+            rospy.Duration(1.0))
     while not rospy.is_shutdown():
         try:
             now = rospy.Time.now()
-            listener.waitForTransform("/turtle2", "/carrot1", now,
-                    rospy.Duration(4.0))
-            (trans, rot) = listener.lookupTransform('/turtle2', '/carrot1',
-                    now)
+            past = now -  rospy.Duration(5.0)
+            listener.waitForTransformFull("/turtle2", now,
+                                      "/turtle1", past,
+                                      "/world", rospy.Duration(1.0))
+            (trans, rot) = listener.lookupTransformFull('/turtle2', now, 
+                                            '/turtle1', past,
+                                            '/world')
         except (tf.LookupException, tf.ConnectivityException,
-                tf.ExtrapolationException), e:
-            raise e
+                tf.Exception), e:
+            #raise e
             continue
 
         angular = 4 * math.atan2(trans[1], trans[0])
