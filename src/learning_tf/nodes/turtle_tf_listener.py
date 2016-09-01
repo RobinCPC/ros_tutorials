@@ -14,6 +14,7 @@ import tf
 import geometry_msgs.msg
 import turtlesim.srv
 
+
 if __name__ == '__main__':
     rospy.init_node('tf_turtle')
 
@@ -27,12 +28,19 @@ if __name__ == '__main__':
             queue_size = 1)
 
     rate = rospy.Rate(10.0)
+
+    listener.waitForTransform("/turtle2", "/carrot1", rospy.Time(),
+            rospy.Duration(4.0))
     while not rospy.is_shutdown():
         try:
+            now = rospy.Time.now()
+            listener.waitForTransform("/turtle2", "/carrot1", now,
+                    rospy.Duration(4.0))
             (trans, rot) = listener.lookupTransform('/turtle2', '/carrot1',
-                    rospy.Time(0))
+                    now)
         except (tf.LookupException, tf.ConnectivityException,
-                tf.ExtrapolationException):
+                tf.ExtrapolationException), e:
+            raise e
             continue
 
         angular = 4 * math.atan2(trans[1], trans[0])
