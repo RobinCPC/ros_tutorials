@@ -128,6 +128,7 @@ include_directories(
 
 ## Declare a C++ executable
 # add_executable(using_markers_node src/using_markers_node.cpp)
+add_executable(basic_shapes src/basic_shapes.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -137,6 +138,7 @@ include_directories(
 # target_link_libraries(using_markers_node
 #   ${catkin_LIBRARIES}
 # )
+target_link_libraries(basic_shapes ${catkin_LIBRARIES})
 
 #############
 ## Install ##
