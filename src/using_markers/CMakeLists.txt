@@ -5,6 +5,7 @@ project(using_markers)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  interactive_markers
   roscpp
   visualization_msgs
 )
@@ -130,6 +131,7 @@ include_directories(
 # add_executable(using_markers_node src/using_markers_node.cpp)
 add_executable(basic_shapes src/basic_shapes.cpp)
 add_executable(points_and_lines src/points_and_lines.cpp)
+add_executable(simple_marker src/simple_marker.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -141,6 +143,7 @@ add_executable(points_and_lines src/points_and_lines.cpp)
 # )
 target_link_libraries(basic_shapes ${catkin_LIBRARIES})
 target_link_libraries(points_and_lines ${catkin_LIBRARIES})
+target_link_libraries(simple_marker ${catkin_LIBRARIES})
 
 #############
 ## Install ##
