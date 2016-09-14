@@ -127,6 +127,7 @@ include_directories(
 
 ## Declare a C++ executable
 # add_executable(testbot_description_node src/testbot_description_node.cpp)
+add_executable(parser src/parser.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -136,6 +137,7 @@ include_directories(
 # target_link_libraries(testbot_description_node
 #   ${catkin_LIBRARIES}
 # )
+target_link_libraries(parser ${catkin_LIBRARIES})
 
 #############
 ## Install ##
