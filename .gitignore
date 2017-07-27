@@ -1,3 +1,20 @@
+# file or directory will ignore by git
+
+# ignore all
+*
+
+# Not ignore all with extensions
+!*.*
+
+# Not ignore all dirs
+!*/
+
+# Not ignore Makefile
+!Makefile
+!LICENSE
+
+### Above combination will ignore all files without extension ###
+
 # Compiled Object files
 *.slo
 *.lo
