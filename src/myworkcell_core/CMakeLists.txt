@@ -14,6 +14,11 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   tf
   moveit_ros_planning_interface
+  ur5_demo_descartes
+  descartes_trajectory
+  descartes_planner
+  descartes_utilities
+  trajectory_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -60,6 +65,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
   FILES
   LocalizePart.srv
+  PlanCartesianPath.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -73,6 +79,7 @@ add_service_files(
 generate_messages(
   DEPENDENCIES
   geometry_msgs
+  trajectory_msgs
   #std_msgs  # Or other packages containing msgs
 )
 
@@ -115,6 +122,11 @@ catkin_package(
     geometry_msgs
     tf
     moveit_ros_planning_interface
+    ur5_demo_descartes
+    descartes_trajectory
+    descartes_planner
+    descartes_utilities
+    trajectory_msgs
 #  DEPENDS system_lib
 )
 
@@ -144,6 +156,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(vision_node src/vision_node.cpp)
 add_executable(myworkcell_node src/myworkcell_node.cpp)
+add_executable(descartes_node src/descartes_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -155,10 +168,12 @@ add_executable(myworkcell_node src/myworkcell_node.cpp)
 ## same as for the library above
 add_dependencies(vision_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(myworkcell_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(descartes_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(vision_node ${catkin_LIBRARIES})
 target_link_libraries(myworkcell_node ${catkin_LIBRARIES})
+target_link_libraries(descartes_node ${catkin_LIBRARIES})
 
 #############
 ## Install ##

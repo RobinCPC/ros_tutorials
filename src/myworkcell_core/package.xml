@@ -62,6 +62,16 @@
   <exec_depend>tf</exec_depend>
   <build_depend>moveit_ros_planning_interface</build_depend>
   <exec_depend>moveit_ros_planning_interface</exec_depend>
+  <build_depend>ur5_demo_descartes</build_depend>
+  <exec_depend>ur5_demo_descartes</exec_depend>
+  <build_depend>descartes_trajectory</build_depend>
+  <exec_depend>descartes_trajectory</exec_depend>
+  <build_depend>descartes_planner</build_depend>
+  <exec_depend>descartes_planner</exec_depend>
+  <build_depend>descartes_utilities</build_depend>
+  <exec_depend>descartes_utilities</exec_depend>
+  <build_depend>trajectory_msgs</build_depend>
+  <exec_depend>trajectory_msgs</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
