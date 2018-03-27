@@ -7,7 +7,7 @@ find_package(catkin REQUIRED descartes_core descartes_moveit pluginlib moveit_co
 find_package(rosconsole_bridge REQUIRED)
 find_package(LAPACK REQUIRED)
 find_package(Boost REQUIRED)
-find_package(Eigen3 REQUIRED)
+find_package(Eigen REQUIRED)
 
 ###################################
 ## catkin specific configuration ##

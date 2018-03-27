@@ -48,6 +48,8 @@
 # buld and devel folder
 build/
 devel/
+logs/
+.catkin_tools/
 
 # ignore submodule (package maintance by ros-I)
 descartes/

@@ -1,2 +1,2 @@
-## This tutorial is build in ROS kinetic version
+## This tutorial is build in ROS indigo version
 
