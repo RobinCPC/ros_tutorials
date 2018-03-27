@@ -13,5 +13,6 @@ Remove old complied files (if exist) and rebuild
 
 ## Material/Reference:
 * [Beginner Tutorial](http://wiki.ros.org/ROS/Tutorials)
+* [ROS-Industrial Tutorial](https://github.com/ros-industrial/industrial_training)
 * [JHU course](https://dscl.lcsr.jhu.edu/courses/me530-707-robot-systems-programming-spring-2017/)
 

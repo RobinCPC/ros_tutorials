@@ -49,3 +49,8 @@
 build/
 devel/
 
+# ignore submodule (package maintance by ros-I)
+descartes/
+universal_robot/
+fake_ar_publisher/
+
